@@ -33,9 +33,13 @@
 .child-2{
     flex: 48%;
 }
-.child-2{
+.child-21{
     display: flex;
     flex-direction: column;
+}
+.child-21{
+    width: 99%;
+    height: 99%;
 }
 .blob{
     margin-top: 17%;
@@ -46,7 +50,7 @@
     justify-content: center;
     align-items: center;
 }
-.child-2 .blob,.circle{
+.child-21 .blob,.circle{
    border-radius:28% 72% 42% 58% / 81% 44% 56% 19%  ;
    border: 5px double #000 ;
    width: 60%;

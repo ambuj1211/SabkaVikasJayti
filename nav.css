@@ -5,3 +5,6 @@
 .nav-link{
     font-weight: 700;
 }
+.navbar-brand{
+    color: white !important;
+}
