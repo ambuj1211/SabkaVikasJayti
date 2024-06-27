@@ -29,26 +29,23 @@
     .jaf{
         font-size: 24px !important;
     }
-    .about-parent,.child-2-about{
-        flex-direction: column;
+    .About{
+        flex-direction: column !important;
     }
-    .child-1-about,.child-2-about{
-        width: 100%;
+    .about-1,.about-3{
+        flex-direction: row !important;
     }
-    .child-21-about{
+    .about-2{
         width: 100% !important;
-        min-height: 200px;
-        max-height: fit-content;
     }
-    .child-21-about>p{
-        margin: 5px;
-        padding: 5px 15px 5px 5px !important;
+    .none{
+        display: none !important;
     }
-    .child-22-about{
-        display: none;
+    .container{
+        margin: 24px 2px !important;
     }
-    .about-bg-logo img{
-        display: block !important;
+    #original-text,.translated-text{
+        font-size: 16px !important;
     }
     .none{
         display: none !important;
