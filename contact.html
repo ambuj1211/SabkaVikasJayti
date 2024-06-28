@@ -7,29 +7,33 @@
   <link rel="stylesheet" href="cstyle.css">
 </head>
 <body>
-  <h1>Contact Me</h1>
-  <form id="contactForm" action="#" method="post">
-    <div class="form-group">
-      <label for="name">Name (Optional):</label>
-      <input type="text" id="name" name="name">
+  <div class="background-overlay"></div>
+    <div class="contact-form-container">
+        <h1>Contact Us</h1>
+        <form action="#" method="post" class="contact-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Address</Address></label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">Send Message</button>
+            </div>
+        </form>
     </div>
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-    </div>
-    <div class="form-group">
-      <label for="phoneNo">Phone Number:</label>
-      <input type="tel" id="phoneNo" name="phoneNo">
-    </div>
-    <div class="form-group">
-      <label for="Message">Message query:</label>
-      <input type="text" id="Message" name="MessageQuery">
-    </div>
-    <button type="submit">Send Message</button>
-  </form>
-
   <script>
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
       event.preventDefault(); // Prevent the form from submitting the traditional way
 
       // Gather the form data
@@ -56,7 +60,7 @@
         // Optionally, show a success message to the user
         alert('Form submitted successfully!');
         // Reset the form to look fresh
-        document.getElementById('contactForm').reset();
+        document.getElementById('contact-form').reset();
     })
     .catch((error) => {
         console.error('Error:', error);
