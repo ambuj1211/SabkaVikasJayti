@@ -1,6 +1,9 @@
 .navbar{
     background-color: rgb(92, 92, 228);
     margin-bottom: 1px;
+    position: fixed;
+    width: 100%;
+    z-index: 1032;
 }
 .nav-link{
     font-weight: 700;

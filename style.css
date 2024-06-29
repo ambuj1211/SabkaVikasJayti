@@ -102,3 +102,13 @@
  .blob>.circle>.incircle{
     background-size: cover;
 }
+
+
+footer a{
+    text-decoration: none;
+    color: white;
+}
+
+.btn{
+    border: none !important;
+}
