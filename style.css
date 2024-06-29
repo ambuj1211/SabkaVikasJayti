@@ -1,6 +1,9 @@
 *{
     box-sizing: border-box;
 }
+html {
+    scroll-behavior: smooth;
+  }
 .parent{
     display: flex;
     height: 90vh;
@@ -107,6 +110,7 @@
 footer a{
     text-decoration: none;
     color: white;
+    cursor: pointer;
 }
 
 .btn{
