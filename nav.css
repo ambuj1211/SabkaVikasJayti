@@ -11,3 +11,10 @@
 .navbar-brand{
     color: white !important;
 }
+.nav-contact{
+    text-decoration: none;
+    color: rgba(0, 0, 0, .5);
+    font-weight: 700;
+    padding: .5rem .5rem;
+
+}

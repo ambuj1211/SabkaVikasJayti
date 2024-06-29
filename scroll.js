@@ -4,7 +4,7 @@ document.querySelectorAll('.nav-link, .dropdown-item').forEach(anchor => {
         e.preventDefault();
         const targetId = this.getAttribute('href').substring(1);
         const targetElement = document.getElementById(targetId);
-        const offset = 200;
+        const offset = 100;
         const bodyRect = document.body.getBoundingClientRect().top;
         const elementRect = targetElement.getBoundingClientRect().top;
         const elementPosition = elementRect - bodyRect;

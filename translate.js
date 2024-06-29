@@ -38,7 +38,7 @@ document.getElementById('toggle-translation-edu').addEventListener('click', func
 });
 
 document.getElementById('toggle-translation-farmer').addEventListener('click', function() {
-    var translatedText = document.getElementById('translated-text-farmer');
+    var translatedText = document.getElementById('translated-text-famer');
     if (translatedText.style.display === 'none') {
         translatedText.style.display = 'block';
         document.getElementById('original-text-farmer').style.display = 'none';
