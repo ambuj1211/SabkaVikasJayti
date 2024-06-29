@@ -8,6 +8,9 @@
   background: url(image/about-sky-bg.jpeg);
   background-size: cover;
 }
+#About img{
+  width: 100% !important;
+}
 .about-1,.about-3{
 width: 25%;
 padding: 10px 20px;
