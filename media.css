@@ -34,6 +34,7 @@
     }
     .about-1,.about-3{
         flex-direction: row !important;
+        height: 40px !important;
     }
     .about-2{
         width: 100% !important;
@@ -56,6 +57,17 @@
     /* #About img{
         width: 285px !important;
     } */
+    .icon-about-img{
+        display: none !important;
+    }
+    .button-about-img::before{
+        width: 60px !important;
+        left: 0px !important;
+    }
+    .card-img:hover{
+        height: 300px;
+        
+      }
 }
 @media  screen and (min-width:601px) and (max-width:1080px) {
     .parent{
@@ -90,4 +102,19 @@
     .navbar-brand>span{
         font-size: 34px !important;
     }
+    .float-right{
+        margin-left: 0% !important;
+    }
+    .about-2{
+        width: 100% !important;
+    }
+    .about-1,.about-3{
+        display: none !important;
+    }
+    .paper,.education,.farmer,.animal,.vikash,.agriculture,.tree,.tech{
+        width: 85% !important;
+    }
+    .card-img:hover{
+        height: 300px;
+      }
 }

@@ -3,7 +3,10 @@
 }
 html {
     scroll-behavior: smooth;
-  }
+}
+p{
+    text-align: justify;
+}
 .parent{
     display: flex;
     height: 90vh;
