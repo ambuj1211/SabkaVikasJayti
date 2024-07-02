@@ -3,21 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Become a Volunteer</title>
+  <title>Sabka Vikas ज्यति</title>
+  <!-- icon fevicon -->
+  <link rel="shortcut icon" href="image/sbjaytiLogo.png" type="image/png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="Volstyle.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- footer  -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"/>
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"/>
+  <!-- footer end  -->
+
+
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- googlefont -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Jaini&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="font-style.css" />
+  <link rel="stylesheet" href="nav.css" />
+  <link rel="stylesheet" href="media.css" />
 </head>
 <body>
   <header>
-    <h1>SABKA VIKASH JAYTI</h1>
-    <nav>
-      </nav>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="#">
+        <img src="image/sbjaytiLogo.png" width="40" height="40" class="d-inline-block align-top" alt="Brand Logo"/>
+        <span class="dsf">Sabka Vikas</span> <span class="jaf">ज्यति</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html#home"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" >About</a
+            >
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="index.html#About">About Us</a>
+              <a class="dropdown-item" href="index.html#seed">बीज बितरण योजना</a>
+              <a class="dropdown-item" href="index.html#edu">बाल शिक्षा योजना</a>
+              <a class="dropdown-item" href="index.html#farmer">किसान मशीनरी योजना</a>
+              <a class="dropdown-item" href="index.html#animal">पशुधन योजना</a>
+              <a class="dropdown-item" href="index.html#rojgar">किसान साथी एवं बहन रोजगार समूह योजना</a>
+              <a class="dropdown-item" href="index.html#agri">वर्मी कम्पोस्ट रोजगार योजना</a>
+              <a class="dropdown-item" href="index.html#tech">Brain Tech Group</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#product">Product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="becomeVolunteer.html">Become Volunteer</a>
+          </li>
+          <li class="nav-item" style="display: flex; justify-content: center">
+            <a class="nav-contact" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
   </header>
 
   <section class="hero">
     <h2>Become a Volunteer & Grow Change with Us</h2>
     <p>Make a real difference in your community. Join our passionate volunteers and help us build a greener future for all.</p>
-    <a href="#volunteer" class="btn">Start Your Volunteer Journey Today</a>
+    <a href="#volunteer" class="btn-volounteer">Start Your Volunteer Journey Today</a>
   </section>
 
   <section class="benefits">
@@ -68,7 +132,7 @@
 
   <section class="why-choose-us">
     <h3>Why Choose Us?</h3>
-    <p>We are a passionate organization dedicated to SABKA VIKASH JAYTI.  Our volunteers are the heart of our work, and we offer a supportive and rewarding environment where you can make a real difference.</p>
+    <p>We are a passionate organization dedicated to <span class="dsf">Sabka Vikas</span> <span class="jaf">ज्यति</span>.  Our volunteers are the heart of our work, and we offer a supportive and rewarding environment where you can make a real difference.</p>
   </section>
 
   <section class="get-involved">
@@ -115,9 +179,53 @@
     </form>
   </section>
 
-  <footer>
-    <p>&copy; Sabka Vikas Jayti 2024</p>
-  </footer>
+  <!-- Footer -->
+  <footer class="text-center text-lg-start text-white" style="background-color: #6388d6">
+    <div class="container pb-0">
+        <section>
+            <div class="row">
+                <div class="col-md-1 mx-auto mt-5">
+                  <img src="image/sbjaytiLogo.png" width="150" height="150" class="d-inline-block align-top" alt="Brand Logo"/>
+                </div>
+                <div class="col-md-5 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h6 class="text-uppercase mb-4 font-weight-bold">
+                        <span class="jaf">Sabka Vikas ज्यति</span>
+                    </h6>
+                    <p>
+                        <a href="index.html"><b>Sabka Vikas Jayti</b></a> is a Non-Governmental Organization dedicated to supporting farmers, women, and children, helping those who are not self-reliant and cannot sustain themselves independently.
+                    </p>
+                </div>
+                <hr class="w-100 clearfix d-md-none" />
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h6 class="text-uppercase mb-4 font-weight-bold">
+                        <a href="contact.html" rel="noopener noreferrer">Contact</a>
+                    </h6>
+                    <p>
+                        <i class="fas fa-home mr-3"></i>
+                        <a target="_blank" href="https://maps.app.goo.gl/LTxUYHUFjWWDRUCv5">First Floor, Jagat palace, Near Radha Krishna Mandir New bypass, 70 Feet BPCL Rd, Patna, Bihar 800002</a>
+                    </p>
+                    <p><i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
+                    <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+                    <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+                </div>
+                <div class="col-md-1 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h6 class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
+                    <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998; border-radius: 50%" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-primary btn-floating m-1" style="color: #fff; background: linear-gradient(#25d366, #25d366) 14% 84%/16% 16% no-repeat, radial-gradient(#25d366 60%, transparent 0); border-radius: 50%;" href="#!" role="button"><i class="fab fa-whatsapp"></i></a>
+                    <a class="btn btn-primary btn-floating m-1" style="background: #f09433; background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 ); border-radius: 50%;" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca; border-radius: 50%" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2024 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/"><span class="dsf">Sabka Vikas</span> <span class="jaf">ज्यति</span></a>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   
   
   <script>

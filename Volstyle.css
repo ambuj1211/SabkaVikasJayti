@@ -5,21 +5,6 @@ body {
     background-color: #f5f5f5;
   }
   
-  header {
-    background-color: #333;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  header h1 {
-    font-size: 1.8em;
-    margin: 0;
-    color: white;
-    
-  }
-  
   
   .hero {
     text-align: center;
@@ -31,17 +16,17 @@ body {
   }
   
   .hero h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+    font-size: 2em;
+    margin-bottom: 40px;
   }
   
   .hero p {
     font-size: 1.3em;
     line-height: 1.5;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
   }
   
-  .btn {
+  .btn-volounteer {
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
@@ -150,9 +135,10 @@ body {
   .why-choose-us p {
     font-size: 1.1em;
     line-height: 1.5;
-    text-align: center;
+    text-align: justify;
     margin-bottom: 20px;
     color: white;
+    padding: 5px 20px;
   }
   
   .get-involved {
@@ -233,9 +219,12 @@ body {
     background-color: #333;
     color: white;
   }
-  footer p{
-    text-align: center;
-    padding: 20px;
+  footer p,footer a{
+    text-align: justify;
+  }
+  footer a{
+    color: white;
+    text-decoration: none;
   }
 
   
