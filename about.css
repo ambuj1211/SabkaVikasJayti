@@ -137,8 +137,8 @@ color: black;
   float: right;
   background: rgb(196, 131, 240);
 }
-.edu-fold{
-  background: linear-gradient(-150deg, transparent 1.5em, rgb(196,131, 240) 0);
+.edu-fold,.ani-fold,.agri-fold,.tech-fold{
+  background: linear-gradient(-150deg, transparent 1.5em, rgb(120, 2, 255) 0) !important;
   border-radius: .5em;
 }
 .edu-img{
