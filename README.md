@@ -1,1 +1,1 @@
-Sabka vikas Jayti, A NGO
+<a href="index.html"><b>Sabka Vikas Jayti</b></a> is a Non-Governmental Organization dedicated to supporting farmers, women, and children, helping those who are not self-reliant and cannot sustain themselves independently.
