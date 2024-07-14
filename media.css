@@ -64,10 +64,36 @@
         width: 60px !important;
         left: 0px !important;
     }
-    .card-img:hover{
+    .equal .card-img:hover{
         height: 300px;
+        /* padding: 5px 10px; */
         
       }
+
+    /* PRODUCT */
+    .pr-home{
+        height: 200px !important;
+    }
+    .pr-home img{
+        height: 150px !important;
+        width: 250px;
+    }
+    .pr-item-c{
+        width: 45% !important;
+    }
+    .pr-item-c,.pr-item-c img{
+        min-height: 200px !important;
+        height: 200px !important;
+    }
+    .pr-item-c .card-img:hover{
+        height: 200px;
+    }
+    .button-about-img{
+        padding-inline: 10px !important;
+    }
+    .content-img{
+        line-height: .8 !important;
+    }
 }
 @media  screen and (min-width:601px) and (max-width:1080px) {
     .parent{

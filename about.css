@@ -5,8 +5,9 @@
   max-height: 200vh;
   position: relative;
   width: 100%;
-  background: url(image/about-sky-bg.jpeg);
+  background: url(https://res.cloudinary.com/dts528npw/image/upload/v1720895655/about-sky-bg_zr3pjd.jpg);
   background-size: cover;
+  align-items: center;
 }
 #About img{
   width: 100% !important;
@@ -19,13 +20,13 @@
   to{scale: 1; opacity: 1;}
 } */
 .about-1,.about-3{
-width: 25%;
+width: 20%;
 padding: 10px 20px;
 display: flex;
 flex-direction: column;
 }
 .about-2{
-width: 50%;
+width: 60%;
 height: 100%;
 padding: 10px 20px;
 display: flex;
@@ -43,7 +44,11 @@ box-shadow:  30px 30px 60px #071228,
 display: flex;
 align-items: center;
 justify-content: center;
+
 }
+/* .about-21 span{
+  background: #5486e2;
+} */
 
 /* neomorphishim */
 .neo{
@@ -70,6 +75,7 @@ font-size: 18px;
 }
 #original-text{
 line-height: normal;
+text-shadow: 0 0 5px rgb(160, 43, 43);
 }
 #original-text>a,.translated-text>a{
 text-decoration: none;
@@ -77,6 +83,8 @@ color: black;
 }
 .translated-text{
 display: none;
+line-height: 1.5;
+text-shadow: 0 0 5px rgb(160, 43, 43);
 }
 .translation-btn{
 cursor: pointer;
