@@ -7,6 +7,9 @@ html {
 p{
     text-align: justify;
 }
+.space{
+    height: 7vh;
+}
 .parent{
     display: flex;
     height: 90vh;
