@@ -528,7 +528,7 @@
                                   <!-- Popup purchase form container -->
 
      <!-- Popup form container -->
-  <div id="formPopup" class="form-popup">
+  <div id="product-form" class="form-popup">
     <div class="container mt-5">
       <h2 class="mb-4">Apply for Seeds, Plants, or Machines</h2>
       <form id="applicationForm">
@@ -601,6 +601,45 @@
     event.preventDefault();
     alert('Application submitted successfully!');
     // Here, you can add the code to send the form data to the server
+  });
+
+
+  //to handle the form ..........................................................................
+
+  document.getElementById('product-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting the traditional way
+
+      // Gather the form data
+    const formData = new FormData(this);
+    const formDataObject = {};
+    formData.forEach((value, key) => {
+        formDataObject[key] = value;
+    });
+
+    // Convert the form data to a JSON string
+    const jsonString = JSON.stringify(formDataObject);
+
+    // Send the data using Fetch API
+    fetch('http://localhost:5500/api/product', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: jsonString
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Success:', data);
+        // Optionally, show a success message to the user
+        alert('Form submitted successfully!');
+        // Reset the form to look fresh
+        document.getElementById('product-form').reset();
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+        // Optionally, show an error message to the user
+        alert('An error occurred while submitting the form.');
+    });
   });
 </script>
 </html>
