@@ -599,8 +599,28 @@
 
   document.getElementById('applicationForm').addEventListener('submit', function(event) {
     event.preventDefault();
-    alert('Application submitted successfully!');
-    // Here, you can add the code to send the form data to the server
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const address = document.getElementById('address').value;
+    const productType = document.getElementById('productType').value;
+    const productName = document.getElementById('productName').value;
+  
+    fetch('/submit_form', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name, email, phone, address, productType, productName }),
+    })
+    .then(response => response.json())
+    .then(data => {
+      alert(data.message);
+      // Optionally, clear the form here if needed
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
   });
 </script>
 </html>

@@ -5,12 +5,12 @@ const path = require('path');
 const { MongoClient } = require('mongodb');
 
 const app = express();
-const port = process.env.PORT || 5502;
+const port = process.env.PORT || 5500;
 
 // Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'static')));
+app.use(express.static(path.join(__dirname)));
 
 // MongoDB setup
 const uri = 'mongodb://localhost:27017/';
@@ -30,7 +30,7 @@ client.connect(err => {
       service: 'gmail',
       auth: {
         user: 'sabkavikasjayti.ngo@gmail.com',
-        pass: 'sabkavikasjayti.ngo@1'
+        pass: 'Sabkavikasjayti.ngo@1'
       }
     });
 
