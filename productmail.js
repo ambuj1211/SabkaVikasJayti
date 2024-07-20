@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname)));
 
 // MongoDB setup
-const uri = 'mongodb://localhost:27017/';
+const uri = 'mongodb+srv://brilliantambuj59:srnrrrb0902_beam052592Ambuj952621@ambujcluster.c5hf5ze.mongodb.net/?retryWrites=true&w=majority&appName=AmbujCluster';
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 client.connect(err => {
@@ -23,7 +23,7 @@ client.connect(err => {
   } else {
     console.log('Connected to MongoDB');
 
-    const collection = client.db('Customer').collection('customer_detail');
+    const collection = client.db('Sabkavikasjayti').collection('Customer');
 
     // Nodemailer transporter setup
     const transporter = nodemailer.createTransport({
