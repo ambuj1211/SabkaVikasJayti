@@ -23,7 +23,7 @@ client.connect(err => {
   } else {
     console.log('Connected to MongoDB');
 
-    const collection = client.db('Sabkavikasjayti').collection('Customer');
+    const collection = client.db('Customer').collection('customer_detail');
 
     // Nodemailer transporter setup
     const transporter = nodemailer.createTransport({
