@@ -1,0 +1,23 @@
+/* Style for the form popup */
+#product-form {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 80vh;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+    background-color: white;
+    overflow-y: auto;
+  }
+  h2,label{
+    color: black;
+  }
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    #product-form {
+      width: 90% !important;
+    }
+  }
