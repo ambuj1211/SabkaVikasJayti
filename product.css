@@ -69,7 +69,7 @@ hr{
 }
 
 /* Style for the form popup */
-.form-popup {
+#product-form {
     display: none;
     position: fixed;
     top: 50%;

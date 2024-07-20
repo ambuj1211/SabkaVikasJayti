@@ -1,9 +1,9 @@
 function buy_form() {
-    document.getElementById('formPopup').style.display = 'block';
+    document.getElementById('product-form').style.display = 'block';
   }
   
   function close_form() {
-    document.getElementById('formPopup').style.display = 'none';
+    document.getElementById('product-form').style.display = 'none';
   }
   
   
