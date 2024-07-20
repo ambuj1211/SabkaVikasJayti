@@ -531,26 +531,26 @@
   <div id="product-form" class="form-popup">
     <div class="container mt-5">
       <h2 class="mb-4">Apply for Seeds, Plants, or Machines</h2>
-      <form id="applicationForm">
+      <form id="product-forms" action="#" method="post">
         <div class="form-group">
           <label for="name">Full Name</label>
-          <input type="text" class="form-control" id="name" required>
+          <input type="text" class="form-control" name="name" required>
         </div>
         <div class="form-group">
           <label for="email">Email address</label>
-          <input type="email" class="form-control" id="email" required>
+          <input type="email" class="form-control" name="email" required>
         </div>
         <div class="form-group">
           <label for="phone">Phone Number</label>
-          <input type="tel" class="form-control" id="phone" required>
+          <input type="tel" class="form-control" name="phone" required>
         </div>
         <div class="form-group">
           <label for="address">Address</label>
-          <input type="text" class="form-control" id="address" required>
+          <input type="text" class="form-control" name="address" required>
         </div>
         <div class="form-group">
           <label for="productType">Product Type</label>
-          <select class="form-control" id="productType" required>
+          <select class="form-control" name="productType" id="productType" required>
             <option value="" disabled selected>Select the product type</option>
             <option value="seeds">Seeds</option>
             <option value="plants">Plants</option>
@@ -559,7 +559,7 @@
         </div>
         <div class="form-group">
           <label for="productName">Product Name</label>
-          <select class="form-control" id="productName" required>
+          <select class="form-control" name="productName" id="productName" required>
             <option value="" disabled selected>Select the product name</option>
           </select>
         </div>
@@ -598,40 +598,42 @@
   });
   //to handle the form ..........................................................................
 
-  document.getElementById('product-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the form from submitting the traditional way
-
-      // Gather the form data
-    const formData = new FormData(this);
-    const formDataObject = {};
-    formData.forEach((value, key) => {
-        formDataObject[key] = value;
+  document.getElementById('product-forms').addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevent the form from submitting the traditional way
+    
+        // Gather the form data
+        console.log("this",this);
+        const formData = new FormData(this);
+        const formDataObject = {};
+        formData.forEach((value, key) => {
+            formDataObject[key] = value;
+        });
+    
+        // Convert the form data to a JSON string
+        const jsonString = JSON.stringify(formDataObject);
+        console.log(jsonString);
+    
+        // Send the data using Fetch API
+        fetch('https://sabka-vikas-jayti-backend.onrender.com/api/product', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: jsonString
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            // Optionally, show a success message to the user
+            alert('Form submitted successfully!');
+            // Reset the form to look fresh
+            document.getElementById('product-forms').reset();
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            // Optionally, show an error message to the user
+            alert('An error occurred while submitting the form.');
+        });
     });
-
-    // Convert the form data to a JSON string
-    const jsonString = JSON.stringify(formDataObject);
-
-    // Send the data using Fetch API
-    fetch('https://sabka-vikas-jayti-backend.onrender.com/api/product', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: jsonString
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Success:', data);
-        // Optionally, show a success message to the user
-        alert('Form submitted successfully!');
-        // Reset the form to look fresh
-        document.getElementById('product-form').reset();
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-        // Optionally, show an error message to the user
-        alert('An error occurred while submitting the form.');
-    });
-  });
 </script>
 </html>

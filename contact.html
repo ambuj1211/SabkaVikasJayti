@@ -130,7 +130,7 @@
 					<span class="shadow-input1"></span>
 				</div>
           <div class="wrap-input1 validate-input" data-validate="valid phone is required: 0000000000">
-              <input type="tel" class="input1" id="phone" name="phone" placeholder="Mobile No.">
+              <input type="tel" class="input1" id="phone" name="phoneNo" placeholder="Mobile No.">
           </div>
 				<!-- <div class="wrap-input1 validate-input">
 					<input class="input1" type="text" name="subject" placeholder="Subject">
@@ -310,40 +310,41 @@
 
 <script>
   document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the form from submitting the traditional way
-
-      // Gather the form data
-    const formData = new FormData(this);
-    const formDataObject = {};
-    formData.forEach((value, key) => {
-        formDataObject[key] = value;
+          event.preventDefault(); // Prevent the form from submitting the traditional way
+    
+        // Gather the form data
+        const formData = new FormData(this);
+        const formDataObject = {};
+        formData.forEach((value, key) => {
+            formDataObject[key] = value;
+        });
+    
+        // Convert the form data to a JSON string
+        const jsonString = JSON.stringify(formDataObject);
+        console.log(jsonString);
+    
+        // Send the data using Fetch API
+        fetch('https://sabka-vikas-jayti-backend.onrender.com/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: jsonString
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            // Optionally, show a success message to the user
+            alert('Form submitted successfully!');
+            // Reset the form to look fresh
+            document.getElementById('contact-form').reset();
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            // Optionally, show an error message to the user
+            alert('An error occurred while submitting the form.');
+        });
     });
-
-    // Convert the form data to a JSON string
-    const jsonString = JSON.stringify(formDataObject);
-
-    // Send the data using Fetch API
-    fetch('https://sabka-vikas-jayti-backend.onrender.com/api/contact', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: jsonString
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Success:', data);
-        // Optionally, show a success message to the user
-        alert('Form submitted successfully!');
-        // Reset the form to look fresh
-        document.getElementById('contact-form').reset();
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-        // Optionally, show an error message to the user
-        alert('An error occurred while submitting the form.');
-    });
-  });
 </script>
 
 
