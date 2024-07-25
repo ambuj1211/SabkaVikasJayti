@@ -68,3 +68,11 @@ hr{
     height: 300px;
 }
 
+a{
+    color: white !important;
+    text-decoration: none;
+}
+a:hover{
+    color: black !important;
+    text-decoration: none;
+}
