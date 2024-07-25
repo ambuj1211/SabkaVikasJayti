@@ -121,16 +121,16 @@
 				</span>
 
 				<div class="wrap-input1 validate-input" data-validate = "Name is required">
-					<input id="name" class="input1" type="text" name="name" placeholder="Name">
+					<input id="name" class="input1" type="text" name="name" placeholder="Name" required>
 					<span class="shadow-input1"></span>
 				</div>
 
 				<div class="wrap-input1 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-					<input id="email" class="input1" type="text" name="email" placeholder="Email">
+					<input id="email" class="input1" type="email" name="email" placeholder="Email" required>
 					<span class="shadow-input1"></span>
 				</div>
           <div class="wrap-input1 validate-input" data-validate="valid phone is required: 0000000000">
-              <input type="tel" class="input1" id="phone" name="phoneNo" placeholder="Mobile No.">
+              <input type="tel" class="input1" id="phone" name="phoneNo" placeholder="Mobile No." required>
           </div>
 				<!-- <div class="wrap-input1 validate-input">
 					<input class="input1" type="text" name="subject" placeholder="Subject">
@@ -144,7 +144,7 @@
 
 				<div class="container-contact1-form-btn">
 					<button class="contact1-form-btn">
-						<span>
+						<span id="submitform">
 							Submit
 							<!-- <i class="fa fa-long-arrow-right" aria-hidden="true"></i> -->
 						</span>
@@ -308,6 +308,9 @@
 
 <script>
   document.getElementById('contact-form').addEventListener('submit', function(event) {
+    const submitform = document.getElementById('submitform');
+            submitform.innerText = 'submitting...';
+            submitform.disabled = true;
           event.preventDefault(); // Prevent the form from submitting the traditional way
     
         // Gather the form data
@@ -335,6 +338,8 @@
             // Optionally, show a success message to the user
             alert('Form submitted successfully!');
             // Reset the form to look fresh
+            submitform.innerText = 'Submit';
+            submitform.disabled = false;
             document.getElementById('contact-form').reset();
         })
         .catch((error) => {

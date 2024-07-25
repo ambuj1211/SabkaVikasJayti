@@ -523,7 +523,7 @@
           </select>
         </div>
         
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button id="submitform" type="submit" class="btn btn-primary">Submit</button>
         <button type="button" class="btn btn-secondary" onclick="close_form()">Close</button>
       </form>
     </div>
@@ -632,7 +632,9 @@
 
     document.getElementById('product-forms').addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent the form from submitting the traditional way
-
+            const submitform = document.getElementById('submitform');
+            submitform.innerText = 'submitting...';
+            submitform.disabled = true;
           // Gather the form data
           const formData = new FormData(this);
           const formDataObject = {};

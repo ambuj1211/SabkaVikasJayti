@@ -21,3 +21,14 @@
 .nav-item{
     display: flex; justify-content: center
 }
+a{
+    color: white !important;
+    text-decoration: none;
+}
+a:hover{
+    color: black !important;
+    text-decoration: none;
+}
+.dropdown-menu{
+    background-color: rgb(92, 92, 228);;
+}
