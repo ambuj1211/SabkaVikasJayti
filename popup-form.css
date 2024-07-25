@@ -15,6 +15,12 @@
   h2,label{
     color: black;
   }
+
+
+  .error-message {
+      color: red;
+      display: none;
+  }
   /* Responsive adjustments */
   @media (max-width: 768px) {
     #product-form {
