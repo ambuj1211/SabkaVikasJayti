@@ -769,189 +769,190 @@
 </script> -->
 <script>
   // Fetch and populate country codes
-  document.addEventListener('DOMContentLoaded', function() {
-      const countryCodeSelect = document.getElementById('countryCode');
+  // Fetch and populate country codes
+document.addEventListener('DOMContentLoaded', function() {
+    const countryCodeSelect = document.getElementById('countryCode');
 
-      fetch('https://restcountries.com/v3.1/all')
-          .then(response => response.json())
-          .then(data => {
-              data.forEach(country => {
-                  if (country.idd && country.idd.root) {
-                      const countryCode = country.idd.root + (country.idd.suffixes ? country.idd.suffixes[0] : '');
-                      const option = document.createElement('option');
-                      option.value = countryCode;
-                      option.text = `${countryCode} (${country.name.common})`;
+    fetch('https://restcountries.com/v3.1/all')
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(country => {
+                if (country.idd && country.idd.root) {
+                    const countryCode = country.idd.root + (country.idd.suffixes ? country.idd.suffixes[0] : '');
+                    const option = document.createElement('option');
+                    option.value = countryCode;
+                    option.text = `${countryCode} (${country.name.common})`;
 
-                      // Avoid adding a duplicate option for India
-                      if (countryCode !== "+91") {
-                          countryCodeSelect.appendChild(option);
-                      }
-                  }
-              });
-          })
-          .catch(error => {
-              console.error('Error fetching country codes:', error);
-              showError('Error fetching country codes. Please try again later.');
-          });
-  });
+                    // Avoid adding a duplicate option for India
+                    if (countryCode !== "+91") {
+                        countryCodeSelect.appendChild(option);
+                    }
+                }
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching country codes:', error);
+            showError('Error fetching country codes. Please try again later.');
+        });
+});
 
-  // Populate product names based on product type
-  const productType = document.getElementById('productType');
-  const productName = document.getElementById('productName');
+// Populate product names based on product type
+const productType = document.getElementById('productType');
+const productNameContainer = document.getElementById('productNameContainer');
 
-  const productOptions = {
-      seeds: ['Rice', 'Wheat', 'Maize'],
-      plants: ['Mango', 'Jackfruit', 'Bel', 'Guava', 'Kagji Nimboo', 'Amla', 'Plum', 'Pomegranate', 'Orange', 'Peepal', 'Banyan', 'Pakar', 'Sagwan'],
-      machines: ['Motor Pump', 'Submersible Pump', 'Fodder Cutting Machine']
-  };
+const productOptions = {
+    seeds: ['Rice', 'Wheat', 'Maize'],
+    plants: ['Mango', 'Jackfruit', 'Bel', 'Guava', 'Kagji Nimboo', 'Amla', 'Plum', 'Pomegranate', 'Orange', 'Peepal', 'Banyan', 'Pakar', 'Sagwan'],
+    machines: ['Motor Pump', 'Submersible Pump', 'Fodder Cutting Machine']
+};
 
-  // productType.addEventListener('change', function() {
-  //     const selectedType = this.value;
-  //     productName.innerHTML = '<option value="" disabled selected>Select the product name</option>';
-  //     if (productOptions[selectedType]) {
-  //         productOptions[selectedType].forEach(function(option) {
-  //             const optionElement = document.createElement('option');
-  //             optionElement.value = option.toLowerCase().replace(/ /g, '_');
-  //             optionElement.textContent = option;
-  //             productName.appendChild(optionElement);
-  //         });
-  //     }
-  // });
-  productType.addEventListener('change', function() {
-      const selectedType = this.value;
-      productNameContainer.innerHTML = ''; // Clear previous options
-      if (productOptions[selectedType]) {
-          productOptions[selectedType].forEach(function(option) {
-              const checkboxContainer = document.createElement('div');
-              checkboxContainer.classList.add('form-check');
-              
-              const checkbox = document.createElement('input');
-              checkbox.type = 'checkbox';
-              checkbox.classList.add('form-check-input');
-              checkbox.name = 'productName';
-              checkbox.value = option.toLowerCase().replace(/ /g, '_');
-              
-              const label = document.createElement('label');
-              label.classList.add('form-check-label');
-              label.textContent = option;
-              
-              checkboxContainer.appendChild(checkbox);
-              checkboxContainer.appendChild(label);
-              productNameContainer.appendChild(checkboxContainer);
-          });
-      }
-  });
+productType.addEventListener('change', function() {
+    const selectedType = this.value;
+    productNameContainer.innerHTML = ''; // Clear previous options
+    if (productOptions[selectedType]) {
+        productOptions[selectedType].forEach(function(option) {
+            const checkboxContainer = document.createElement('div');
+            checkboxContainer.classList.add('form-check');
+            
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.classList.add('form-check-input');
+            checkbox.name = 'productName';
+            checkbox.value = option;
+            
+            const label = document.createElement('label');
+            label.classList.add('form-check-label');
+            label.textContent = option;
+            
+            checkboxContainer.appendChild(checkbox);
+            checkboxContainer.appendChild(label);
+            productNameContainer.appendChild(checkboxContainer);
+        });
+    }
+});
 
-  // Email validation function
-  function validateEmail(email) {
-      return fetch(`https://emailvalidation.abstractapi.com/v1/?api_key=9e4bc8cbc6f142349b4b94e49d2e3963&email=${email}`)
-          .then(response => response.json())
-          .then(data => data.deliverability === "DELIVERABLE")
-          .catch(() => false);
-  }
+// Email validation function
+function validateEmail(email) {
+    return fetch(`https://emailvalidation.abstractapi.com/v1/?api_key=9e4bc8cbc6f142349b4b94e49d2e3963&email=${email}`)
+        .then(response => response.json())
+        .then(data => data.deliverability === "DELIVERABLE")
+        .catch(() => false);
+}
 
-  // Handle form submission
-  document.getElementById('product-forms').addEventListener('submit', async function(event) {
-      const submitform = document.getElementById('submitform');
-      const phoneInput = document.querySelector('input[name="phone"]');
-      const phoneError = document.getElementById('phone-error');
-      const emailInput = document.querySelector('input[name="email"]');
-      const emailError = document.getElementById('email-error');
-      const errorMessageElement = document.getElementById('error-message');
+// Handle form submission
+document.getElementById('product-forms').addEventListener('submit', async function(event) {
+    const submitform = document.getElementById('submitform');
+    const phoneInput = document.querySelector('input[name="phone"]');
+    const phoneError = document.getElementById('phone-error');
+    const emailInput = document.querySelector('input[name="email"]');
+    const emailError = document.getElementById('email-error');
+    const errorMessageElement = document.getElementById('error-message');
 
-      submitform.innerText = 'Submitting...';
-      submitform.disabled = true;
-      
-      // Prevent the form from submitting the traditional way
-      event.preventDefault(); 
-      
-      // Custom validation for phone number
-      if (!phoneInput.value.match(/^\d{10}$/)) {
-          phoneError.style.display = 'block';
-          submitform.innerText = 'Submit';
-          submitform.disabled = false;
-          return;
-      } else {
-          phoneError.style.display = 'none';
-      }
+    submitform.innerText = 'Submitting...';
+    submitform.disabled = true;
+    
+    // Prevent the form from submitting the traditional way
+    event.preventDefault(); 
+    
+    // Custom validation for phone number
+    if (!phoneInput.value.match(/^\d{10}$/)) {
+        phoneError.style.display = 'block';
+        submitform.innerText = 'Submit';
+        submitform.disabled = false;
+        return;
+    } else {
+        phoneError.style.display = 'none';
+    }
 
-      // Custom validation for email
-      const isEmailValid = await validateEmail(emailInput.value);
-      if (!isEmailValid) {
-          emailError.style.display = 'block';
-          submitform.innerText = 'Submit';
-          submitform.disabled = false;
-          return;
-      } else {
-          emailError.style.display = 'none';
-      }
-      
-      // Gather the form data
-      const formData = new FormData(this);
-      const formDataObject = {};
-      formData.forEach((value, key) => {
-          if (Array.isArray(formDataObject[key])) {
-              formDataObject[key].push(value);
-          } else if (key === 'productName') {
-              if (!formDataObject[key]) formDataObject[key] = [];
-              formDataObject[key].push(value);
-          } else if (value === "") {
-              formDataObject[key] = [];
-          } else {
-              formDataObject[key] = value;
-          }
-      });
+    // Custom validation for email
+    const isEmailValid = await validateEmail(emailInput.value);
+    if (!isEmailValid) {
+        emailError.style.display = 'block';
+        submitform.innerText = 'Submit';
+        submitform.disabled = false;
+        return;
+    } else {
+        emailError.style.display = 'none';
+    }
 
-      // Convert the form data to a JSON string
-      const jsonString = JSON.stringify(formDataObject);
-      console.log(jsonString);
+    // Gather the form data
+    const formData = new FormData(this);
+    const formDataObject = {};
+    formData.forEach((value, key) => {
+        if (formDataObject[key]) {
+            if (!Array.isArray(formDataObject[key])) {
+                formDataObject[key] = [formDataObject[key]];
+            }
+            formDataObject[key].push(value);
+        } else {
+            formDataObject[key] = value;
+        }
+    });
 
-      // Send the data using Fetch API
-      fetch('https://sabka-vikas-jayti-backend.onrender.com/api/product', {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json'
-          },
-          body: jsonString
-      })
-      .then(response => response.json())
-      .then(data => {
-          if (data.error) {
-              throw new Error(data.error);
-          }
-          console.log('Success:', data);
-          // Optionally, show a success message to the user
-          alert('Form submitted successfully!');
-          // Reset the form to look fresh
-          submitform.innerText = 'Submit';
-          submitform.disabled = false;
-          document.getElementById('product-forms').reset();
-          document.getElementById('product-form').style.display = 'none';
-      })
-      .catch((error) => {
-          console.error('Error:', error);
-          showError('An error occurred while submitting the form. Please try again.');
-          submitform.innerText = 'Submit';
-          submitform.disabled = false;
-      });
-  });
+    // Collect checked checkboxes for product names
+    const checkedProducts = [];
+    document.querySelectorAll('input[name="productName"]:checked').forEach(checkbox => {
+        checkedProducts.push(checkbox.value);
+    });
+    formDataObject['productName'] = checkedProducts;
 
-  // Show error message function
-  function showError(message) {
-      const errorMessageElement = document.getElementById('error-message');
-      errorMessageElement.textContent = message;
-      errorMessageElement.style.display = 'block';
-  }
+    // Convert the form data to a JSON string
+    const jsonString = JSON.stringify(formDataObject);
+    console.log(jsonString);
 
-  // Phone number validation on input
-  document.querySelector('input[name="phone"]').addEventListener('input', function() {
-      const phoneInput = this;
-      const phoneError = document.getElementById('phone-error');
-      if (!phoneInput.value.match(/^\d{10}$/)) {
-          phoneError.style.display = 'block';
-      } else {
-          phoneError.style.display = 'none';
-      }
-  });
+    // Send the data using Fetch API
+    fetch('https://sabka-vikas-jayti-backend.onrender.com/api/product', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: jsonString
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.error) {
+            throw new Error(data.error);
+        }
+        console.log('Success:', data);
+        // Optionally, show a success message to the user
+        alert('Form submitted successfully!');
+        // Reset the form to look fresh
+        submitform.innerText = 'Submit';
+        submitform.disabled = false;
+        document.getElementById('product-forms').reset();
+        document.getElementById('product-form').style.display = 'none';
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+        showError('An error occurred while submitting the form. Please try again.');
+        submitform.innerText = 'Submit';
+        submitform.disabled = false;
+    });
+});
+
+// Show error message function
+function showError(message) {
+    const errorMessageElement = document.getElementById('error-message');
+    errorMessageElement.textContent = message;
+    errorMessageElement.style.display = 'block';
+}
+
+// Close form function
+// function close_form() {
+//     document.getElementById('product-form').style.display = 'none';
+// }
+
+// Phone number validation on input
+document.querySelector('input[name="phone"]').addEventListener('input', function() {
+    const phoneInput = this;
+    const phoneError = document.getElementById('phone-error');
+    if (!phoneInput.value.match(/^\d{10}$/)) {
+        phoneError.textContent = 'Phone number must be exactly 10 digits.';
+        phoneError.style.display = 'block';
+    } else {
+        phoneError.style.display = 'none';
+    }
+});
+
 </script>
 </html>
