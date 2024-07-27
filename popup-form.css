@@ -18,7 +18,14 @@
 
 
   .error-message {
-      color: red;
+      color: rgb(245, 2, 2);
+      font-weight: 700;
+      background-color: #f1f1f1;
+      text-align: center;
+      width: fit-content;
+      margin-top: 5px;
+      padding: 10px 20px;
+      border-radius: 30px;
       display: none;
   }
   /* Responsive adjustments */

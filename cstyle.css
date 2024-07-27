@@ -1,4 +1,4 @@
-body {
+/* body {
   font-family: 'Arial', sans-serif;
   background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #2a5298 60%, #1e3c72 100%);
   background-size: cover;
@@ -97,4 +97,19 @@ body {
 
 .contact-form .form-group button:hover {
   background: linear-gradient(135deg, #1e3c72, #2a5298);
+} */
+.countryCode{
+  display: block;
+  width: 100%;
+  height: calc(1.5em + 1.5rem + 2px) !important;
+  padding: 0.376rem .75rem !important;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 1.5rem !important;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
