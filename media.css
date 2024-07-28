@@ -6,6 +6,12 @@
     .nav-contact{
         padding:.5rem 0 !important;
     }
+    .myprofile{
+        display: none;
+    }
+    .blockdisplay{
+        display: block;
+    }
     .parent{
         flex-direction: column;
         height: 80vh;

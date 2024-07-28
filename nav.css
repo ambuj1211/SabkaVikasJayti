@@ -37,3 +37,10 @@ a:hover{
 .dropdown-menu{
     background-color: rgb(92, 92, 228);;
 }
+.myprofile{
+    display: inline;
+    float: right;
+}
+.blockdisplay{
+    display: none;
+}
