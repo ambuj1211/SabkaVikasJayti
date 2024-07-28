@@ -3,8 +3,9 @@ const OFFLINE_URL = 'offline.html';
 
 const FILES_TO_CACHE = [
   OFFLINE_URL,
- // Add other assets like CSS, JS, images as needed
-  'script.js'
+  // Update if you have separate CSS files
+  'script.js',
+  'https://res.cloudinary.com/dts528npw/image/upload/v1720887837/sbjaytiLogo_sjbm6a.png'  // Add other assets as needed
 ];
 
 self.addEventListener('install', (event) => {
