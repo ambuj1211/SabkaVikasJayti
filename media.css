@@ -29,6 +29,9 @@
         border-radius: 50% 0% 0% 50%;
         border-style: hidden hidden hidden double;
     }
+    .child-content span{
+        font-size: 1.4rem;
+    }
     .glow{
         font-size: 24px;
     }
@@ -102,8 +105,28 @@
     }
 }
 @media  screen and (min-width:601px) and (max-width:1080px) {
+    
     .nav-item{
         justify-content: left !important;
+    }
+    .navbar-brand{
+        color: white !important;
+        font-size: 4rem;
+        font-weight: 900;
+        text-shadow: 1px 1px white;
+    }
+    .dsf,.jaf{
+        font-size: 3rem !important;
+        font-weight: 900;
+        text-shadow: 1px 1px white;
+    }
+    .navbar-brand img{
+        width: 120px !important;
+        height: 120px !important;
+        /* aspect-ratio: 1 !important; */
+    }
+    .navbar-toggler-icon{
+        font-size: 3rem !important;
     }
     .nav-contact{
         padding: 0 !important;

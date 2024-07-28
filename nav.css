@@ -11,6 +11,11 @@
 .navbar-brand{
     color: white !important;
 }
+.navbar-brand img{
+    width: 50px !important;
+    height: 50px !important;
+    /* aspect-ratio: 1 !important; */
+}
 .nav-contact{
     text-decoration: none;
     color: rgba(0, 0, 0, .5);

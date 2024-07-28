@@ -8,7 +8,7 @@ p{
     text-align: justify;
 }
 .space{
-    height: 7vh;
+    height: 9vh;
 }
 .parent{
     display: flex;
@@ -26,17 +26,22 @@ p{
     height: 99%;
     border-radius: 0px 50% 50% 0%;
     border-style: hidden double hidden hidden;
+    background-size:cover;
+    background-image:url('/image/image.png');
 }
 .child-content{
     width: 99%;
     height: 99%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: end;
+    justify-content: last baseline;
     color: #000;
 }
-.child-content h1>span{
-    font-size: 50px;
+.child-content span{
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgb(222, 222, 240);
+    text-shadow: 1px 1px rgb(179, 3, 179);
 }
 
 .child-2{
@@ -60,11 +65,14 @@ p{
     align-items: center;
 }
 .child-21 .blob,.circle{
-   border-radius:28% 72% 42% 58% / 81% 44% 56% 19%  ;
+   border-radius:38% 72% 42% 58% / 81% 44% 56% 19%  ;
    border: 5px double #000 ;
    width: 60%;
    height: 60%;
    animation: blobani 25s infinite 5s;
+}
+.theme>h1{
+    font-size: 50px;
 }
 @keyframes blobani {
     0%  {border-radius: 25% 75% 40% 60% / 80% 40% 60% 20%; background: radial-gradient(circle, rgb(226, 240, 146) , rgb(49, 62, 243))}

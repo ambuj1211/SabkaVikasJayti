@@ -1,16 +1,16 @@
 .dsf {
     font-family: "Dancing Script", cursive;
     font-optical-sizing: auto;
-    font-weight: 700;
+    font-weight: 900;
     font-style: normal;
   }
   .jaf{
     font-family: "Jaini", system-ui;
-    font-weight: 400;
+    font-weight: 900;
     font-style: normal;
   }
   .dsf,.jaf{
-    font-size: x-large;
+    font-size: 24px !important;
   }
 
   .glow {
